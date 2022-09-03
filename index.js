@@ -3,6 +3,10 @@ document.querySelector("main button").addEventListener("click", () => {
   let quantity = document.querySelector("#quantity").value;
   let finalPrice = document.querySelector("#final").value;
 
+  if (quantity === 0) {
+    return setMessage("Quantity of stocks cannot be zero.");
+  }
+
   if (initialPrice > finalPrice) {
     document.body.style.backgroundColor = "rgb(255 50 50)";
     let loss = (initialPrice - finalPrice) * quantity;
