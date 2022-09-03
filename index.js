@@ -3,11 +3,11 @@ document.querySelector("main button").addEventListener("click", () => {
   let quantity = parseInt(document.querySelector("#quantity").value);
   let finalPrice = parseInt(document.querySelector("#final").value);
 
-  if (parseInt(quantity) === 0) {
+  if (quantity === 0) {
     return setMessage("Quantity of stocks cannot be zero.");
   }
 
-  if (parseInt(initialPrice) === parseInt(finalPrice)) {
+  if (initialPrice === finalPrice) {
     return setMessage("There was no profit or loss");
   }
 
