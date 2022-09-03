@@ -1,10 +1,14 @@
 document.querySelector("main button").addEventListener("click", () => {
-  let initialPrice = document.querySelector("#initial").value;
-  let quantity = document.querySelector("#quantity").value;
-  let finalPrice = document.querySelector("#final").value;
+  let initialPrice = parseInt(document.querySelector("#initial").value);
+  let quantity = parseInt(document.querySelector("#quantity").value);
+  let finalPrice = parseInt(document.querySelector("#final").value);
 
-  if (quantity === 0) {
+  if (parseInt(quantity) === 0) {
     return setMessage("Quantity of stocks cannot be zero.");
+  }
+
+  if (parseInt(initialPrice) === parseInt(finalPrice)) {
+    return setMessage("There was no profit or loss");
   }
 
   if (initialPrice > finalPrice) {
