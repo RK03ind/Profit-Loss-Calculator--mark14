@@ -1,7 +1,11 @@
 document.querySelector("main button").addEventListener("click", () => {
-  let initialPrice = parseInt(document.querySelector("#initial").value);
-  let quantity = parseInt(document.querySelector("#quantity").value);
-  let finalPrice = parseInt(document.querySelector("#final").value);
+  let initialPrice = parseFloat(document.querySelector("#initial").value);
+  let quantity = parseFloat(document.querySelector("#quantity").value);
+  let finalPrice = parseFloat(document.querySelector("#final").value);
+
+  if (!(initialPrice && finalPrice)) {
+    return setMessage("Enter valid data in input fields");
+  }
 
   if (quantity === 0) {
     return setMessage("Quantity of stocks cannot be zero.");
